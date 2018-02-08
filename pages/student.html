@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息管理</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/bootstrap-table/bootstrap-table.min.css">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+    <style>
+
+
+    </style>
+</head>
+
+<body class="container">
+
+    <div id="tools-bar">
+        <div class="card" id="condtions" width="70%">
+            <div class="card-header">
+                筛选条件
+                <i class="fa fa-angle-up fa-lg" onclick="show_hide(this)"></i>
+            </div>
+            <div class="card-body" style="text-align: center" id="filter">
+                <div id="conditions">
+                    <script type="text/html" id="condition">
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <select class="custom-select">
+                        <option value="等于"> 等于 </option>
+                        <option value="大于"> 大于 </option>
+                        <option value="小于"> 小于 </option>
+                        <option value="大于等于"> 大于等于 </option>
+                        <option value="小于等于"> 小于等于 </option>
+                        <option value="包含"> 包含 </option>
+                        <option value="不包含"> 不包含 </option>
+                        <option value="不等于"> 不等于 </option>
+                    </select>
+                            <input type="text" class="form-control">
+                            <a href="#" class="btn btn-info" onclick="add_conditions(this)">
+                        <i class="fa fa-plus fa-lg"></i> 添加条件
+                    </a>
+                            <a href="#" class="btn btn-info" onclick="del_conditions(this)">
+                        <i class="fa fa-minus fa-lg"></i> 删除条件
+                    </a>
+                        </div>
+                    </script>
+                </div>
+
+                <br>
+                <button class="btn btn-info" id="query" onclick="query()">查询</button>
+            </div>
+        </div>
+        <div class="card" id="search">
+            <div class="card-header">
+                搜索
+                <i class="fa fa-angle-up fa-lg" onclick="show_hide(this)"></i>
+            </div>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="请输入查询内容">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">搜索</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary" id="stu-add"><i class="fa fa-plus fa-lg"></i>新增</button>
+        <button type="button" class="btn btn-secondary" id="stu-del"><i class="fa fa-minus fa-lg"></i>删除</button>
+        <button type="button" class="btn btn-secondary" id="stu-update"><i class="fa fa-pencil fa-lg"></i>修改</button>
+        <button type="button" class="btn btn-secondary" id="export-excel"><i class="fa fa-file-excel-o fa-lg"></i>导出为Excel</button>
+        <div class="modal fade" id="stu-model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table id="table"></table>
+
+    <script type="text/javascript" src="/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/lib/template-web.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/js/popper.min.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/lib/bootstrap-table/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
+    <script type="text/javascript" src="/js/student/sutdent.js"></script>
+    <!--查询条件操作-->
+    <script type="text/javascript" src="/js/student/conditions.js"></script>
+    <!--搜索操作-->
+    <script type="text/javascript" src="/js/student/search.js"></script>
+
+    <script type="text/javascript" src="/lib/xlsx.core.min.js"></script>
+    <script type="text/javascript" src="/lib/blob.js"></script>
+    <script type="text/javascript" src="/lib/FileSaver.js"></script>
+    <script type="text/javascript" src="/lib/tableExport.min.js"></script>
+
+</body>
+
+</html>
