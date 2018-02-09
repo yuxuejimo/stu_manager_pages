@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/lib/bootstrap-table/bootstrap-table.min.css">
     <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
+    
     <style>
 
 
@@ -75,6 +75,7 @@
         <button type="button" class="btn btn-secondary" id="stu-del"><i class="fa fa-minus fa-lg"></i>删除</button>
         <button type="button" class="btn btn-secondary" id="stu-update"><i class="fa fa-pencil fa-lg"></i>修改</button>
         <button type="button" class="btn btn-secondary" id="export-excel"><i class="fa fa-file-excel-o fa-lg"></i>导出为Excel</button>
+         <a href="" download="student.xlsx" id="hf"></a>
         <div class="modal fade" id="stu-model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -117,11 +118,15 @@
     <script type="text/javascript" src="/js/student/conditions.js"></script>
     <!--搜索操作-->
     <script type="text/javascript" src="/js/student/search.js"></script>
-
+    
+    <!--导出xlsx-->
+    <script src="http://oss.sheetjs.com/js-xlsx/xlsx.full.min.js"></script>
+<!--
     <script type="text/javascript" src="/lib/xlsx.core.min.js"></script>
     <script type="text/javascript" src="/lib/blob.js"></script>
     <script type="text/javascript" src="/lib/FileSaver.js"></script>
     <script type="text/javascript" src="/lib/tableExport.min.js"></script>
+-->
 
 </body>
 
